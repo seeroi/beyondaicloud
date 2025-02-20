@@ -1,39 +1,100 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Cog, Server, Calendar, Mail, Phone, MapPin, Users } from "lucide-react";
+import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Calendar, Mail, Phone, MapPin, Users, Bot, MessageSquareCode, GitBranch, FileCode2, Zap, Workflow, Cog, Server, Terminal, Briefcase, Kanban, ListTree, ChartBar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: <BrainCircuit className="w-8 h-8" />,
-    title: "AI Automations",
-    description: "Streamline your operations with intelligent automation solutions",
+    icon: <BrainCircuit className="w-10 h-10" />,
+    title: "Advanced AI Solutions",
+    description: "Cutting-edge AI technologies for intelligent business operations",
+    features: [
+      "Agentic AI Development",
+      "Large Language Models (LLMs)",
+      "Custom AI Agents",
+      "RAG (Retrieval Augmented Generation)",
+      "Autonomous AI Systems",
+      "Knowledge Base Integration"
+    ],
   },
   {
-    icon: <Rocket className="w-8 h-8" />,
+    icon: <Bot className="w-10 h-10" />,
     title: "Generative AI",
-    description: "Harness the power of state-of-the-art generative AI models",
+    description: "Transform content creation and problem-solving with AI",
+    features: [
+      "Text & Code Generation",
+      "Image & Video Synthesis",
+      "Voice & Speech Processing",
+      "Custom GPT Models",
+      "Prompt Engineering",
+      "Fine-tuning & Training"
+    ],
   },
   {
-    icon: <BarChart3 className="w-8 h-8" />,
-    title: "Analytics & Insights",
-    description: "Data-driven insights to power strategic decision making",
+    icon: <Zap className="w-10 h-10" />,
+    title: "AI Automation",
+    description: "Streamline workflows with intelligent automation",
+    features: [
+      "Zapier Integration",
+      "N8N Workflow Design",
+      "Custom Automation Scripts",
+      "Process Optimization",
+      "API Integrations",
+      "Automated Testing"
+    ],
   },
   {
-    icon: <Database className="w-8 h-8" />,
+    icon: <Database className="w-10 h-10" />,
     title: "Data Engineering",
-    description: "Robust data infrastructure and pipeline solutions",
+    description: "Build robust data infrastructure and pipelines",
+    features: [
+      "ETL Pipeline Development",
+      "Data Warehouse Design",
+      "Real-time Processing",
+      "Data Lake Architecture",
+      "Stream Processing",
+      "Data Quality Management"
+    ],
   },
   {
-    icon: <Cloud className="w-8 h-8" />,
-    title: "Cloud Solutions",
-    description: "Multi-cloud infrastructure and deployment strategies",
+    icon: <Cloud className="w-10 h-10" />,
+    title: "DevOps Solutions",
+    description: "End-to-end cloud infrastructure and deployment",
+    features: [
+      "AWS/GCP/Azure Services",
+      "Digital Ocean Setup",
+      "Lambda Functions",
+      "Container Orchestration",
+      "CI/CD Pipelines",
+      "Infrastructure as Code"
+    ],
   },
   {
-    icon: <Users className="w-8 h-8" />,
+    icon: <Briefcase className="w-10 h-10" />,
     title: "Product Management",
-    description: "Strategic product planning and development lifecycle",
+    description: "Strategic product development and lifecycle management",
+    features: [
+      "Product Strategy",
+      "Agile Development",
+      "Sprint Planning",
+      "Feature Prioritization",
+      "User Story Mapping",
+      "Release Management"
+    ],
   },
+  {
+    icon: <ChartBar className="w-10 h-10" />,
+    title: "Analytics & BI",
+    description: "Transform data into actionable insights",
+    features: [
+      "Business Intelligence",
+      "Custom Dashboards",
+      "Predictive Analytics",
+      "KPI Tracking",
+      "Data Visualization",
+      "Performance Metrics"
+    ],
+  }
 ];
 
 const Index = () => {
@@ -44,7 +105,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 py-4">
@@ -105,9 +166,9 @@ const Index = () => {
       <section id="services" className="container px-4 py-20 mx-auto relative">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000')] 
-          bg-cover bg-fixed bg-center opacity-5"
+          bg-cover bg-fixed bg-center opacity-10 saturate-150"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-white/80 to-transparent" />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -118,7 +179,7 @@ const Index = () => {
             Our Services
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Comprehensive technology solutions for modern businesses
+            Comprehensive AI and technology solutions for modern enterprises
           </p>
         </motion.div>
 
@@ -131,24 +192,37 @@ const Index = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative p-8 rounded-2xl transition-all duration-300 ${
                 isHovered === index
-                  ? "bg-primary/5 shadow-lg scale-105"
-                  : "bg-white/60 hover:bg-primary/5 hover:shadow-md"
+                  ? "bg-white shadow-xl scale-105 border border-primary/20"
+                  : "bg-white/80 hover:bg-white hover:shadow-lg border border-gray-100"
               }`}
               onMouseEnter={() => setIsHovered(index)}
               onMouseLeave={() => setIsHovered(null)}
             >
-              <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <div className={`text-primary mb-6 transform transition-all duration-300 ${
+                isHovered === index ? "scale-110" : ""
+              }`}>
+                {service.icon}
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600">{service.description}</p>
-              <ArrowRight
-                className={`absolute bottom-6 right-6 w-5 h-5 transition-all duration-300 ${
-                  isHovered === index
-                    ? "text-primary translate-x-1"
-                    : "text-gray-400"
-                }`}
-              />
+              <p className="text-gray-600 mb-6">{service.description}</p>
+              <ul className="space-y-3 mb-8">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center text-gray-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className={`absolute bottom-6 right-6 flex items-center text-sm font-medium ${
+                isHovered === index ? "text-primary" : "text-gray-500"
+              }`}>
+                Learn More
+                <ArrowRight className={`ml-1 w-4 h-4 transition-transform duration-300 ${
+                  isHovered === index ? "translate-x-1" : ""
+                }`} />
+              </div>
             </motion.div>
           ))}
         </div>
