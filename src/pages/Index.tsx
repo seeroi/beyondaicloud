@@ -1,39 +1,44 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Cog, Server, Calendar, Mail, Phone, MapPin, Users } from "lucide-react";
+import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Calendar, Mail, Phone, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: <BrainCircuit className="w-8 h-8" />,
+    icon: <BrainCircuit className="w-10 h-10" />,
     title: "AI Automations",
-    description: "Streamline your operations with intelligent automation solutions",
+    description: "Transform your workflows with intelligent automation",
+    features: ["Process Automation", "Smart Workflows", "AI-Driven Decisions"],
   },
   {
-    icon: <Rocket className="w-8 h-8" />,
+    icon: <Rocket className="w-10 h-10" />,
     title: "Generative AI",
-    description: "Harness the power of state-of-the-art generative AI models",
+    description: "Create content and solve problems with AI",
+    features: ["Text Generation", "Image Creation", "Code Generation"],
   },
   {
-    icon: <BarChart3 className="w-8 h-8" />,
+    icon: <BarChart3 className="w-10 h-10" />,
     title: "Analytics & Insights",
-    description: "Data-driven insights to power strategic decision making",
+    description: "Turn data into actionable business insights",
+    features: ["Predictive Analytics", "Real-time Dashboards", "Custom Reports"],
   },
   {
-    icon: <Database className="w-8 h-8" />,
+    icon: <Database className="w-10 h-10" />,
     title: "Data Engineering",
-    description: "Robust data infrastructure and pipeline solutions",
+    description: "Build robust data infrastructure solutions",
+    features: ["Data Pipelines", "ETL Processing", "Data Warehousing"],
   },
   {
-    icon: <Cloud className="w-8 h-8" />,
+    icon: <Cloud className="w-10 h-10" />,
     title: "Cloud Solutions",
-    description: "Multi-cloud infrastructure and deployment strategies",
+    description: "Scale your infrastructure across clouds",
+    features: ["Multi-cloud Strategy", "Cloud Migration", "DevOps"],
   },
   {
-    icon: <Users className="w-8 h-8" />,
+    icon: <Users className="w-10 h-10" />,
     title: "Product Management",
-    description: "Strategic product planning and development lifecycle",
+    description: "Strategic product development and planning",
+    features: ["Product Strategy", "Roadmap Planning", "Agile Development"],
   },
 ];
 
@@ -45,9 +50,9 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-secondary/95 backdrop-blur-md z-50 border-b border-primary/20">
+      <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-primary/10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -72,9 +77,9 @@ const Index = () => {
       <section className="container px-4 pt-32 pb-20 mx-auto text-center relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000')] 
-          bg-cover bg-center opacity-30"
+          bg-cover bg-center opacity-15 saturate-150"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-white/50 to-transparent" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,19 +111,19 @@ const Index = () => {
       <section id="services" className="container px-4 py-20 mx-auto relative">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000')] 
-          bg-cover bg-fixed bg-center opacity-20"
+          bg-cover bg-fixed bg-center opacity-10 saturate-150"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-white/80 to-transparent" />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mb-16 relative"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-gradient">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Our Services
           </h2>
-          <p className="mt-4 text-lg text-gray-200">
+          <p className="mt-4 text-lg text-gray-600">
             Comprehensive technology solutions for modern businesses
           </p>
         </motion.div>
@@ -130,26 +135,39 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative p-8 rounded-2xl transition-all duration-300 glass-morphism ${
+              className={`relative p-8 rounded-2xl transition-all duration-300 ${
                 isHovered === index
-                  ? "bg-primary/20 shadow-lg scale-105"
-                  : "hover:bg-primary/10 hover:shadow-md"
+                  ? "bg-white shadow-xl scale-105 border border-primary/20"
+                  : "bg-white/80 hover:bg-white hover:shadow-lg border border-gray-100"
               }`}
               onMouseEnter={() => setIsHovered(index)}
               onMouseLeave={() => setIsHovered(null)}
             >
-              <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <div className={`text-primary mb-6 transform transition-all duration-300 ${
+                isHovered === index ? "scale-110" : ""
+              }`}>
+                {service.icon}
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-200">{service.description}</p>
-              <ArrowRight
-                className={`absolute bottom-6 right-6 w-5 h-5 transition-all duration-300 ${
-                  isHovered === index
-                    ? "text-primary translate-x-1"
-                    : "text-gray-400"
-                }`}
-              />
+              <p className="text-gray-600 mb-6">{service.description}</p>
+              <ul className="space-y-3 mb-8">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center text-gray-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className={`absolute bottom-6 right-6 flex items-center text-sm font-medium ${
+                isHovered === index ? "text-primary" : "text-gray-500"
+              }`}>
+                Learn More
+                <ArrowRight className={`ml-1 w-4 h-4 transition-transform duration-300 ${
+                  isHovered === index ? "translate-x-1" : ""
+                }`} />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -161,11 +179,11 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative isolate overflow-hidden bg-gradient-to-br from-primary/30 to-primary-dark/50 rounded-3xl px-6 py-24 text-center shadow-2xl sm:px-16 glass-morphism"
+          className="relative isolate overflow-hidden bg-gradient-to-br from-primary/90 to-primary rounded-3xl px-6 py-24 text-center shadow-2xl sm:px-16"
         >
           <div 
             className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2000')] 
-            bg-cover bg-center opacity-30"
+            bg-cover bg-center opacity-20 saturate-150"
           />
           <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl text-gradient">
             Ready to Transform Your Business?
@@ -186,7 +204,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary-dark py-12 mt-20">
+      <footer className="bg-gray-900 py-12 mt-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
