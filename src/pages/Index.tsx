@@ -192,20 +192,20 @@ const Index = () => {
               onMouseLeave={() => setIsHovered(null)}
             >
               <div className="flex items-start space-x-4">
-                <div className={`text-primary transform transition-all duration-300 ${
+                <div className={`text-primary transform transition-all duration-300 flex-shrink-0 ${
                   isHovered === index ? "scale-110" : ""
                 }`}>
                   {service.icon}
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-3">{service.description}</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+                  <p className="text-sm text-gray-600 mb-2 line-clamp-2">{service.description}</p>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-600">
-                        <div className="w-1 h-1 rounded-full bg-primary mr-2 flex-shrink-0" />
+                      <div key={idx} className="flex items-center text-xs text-gray-600 whitespace-nowrap overflow-hidden">
+                        <div className="w-1 h-1 rounded-full bg-primary mr-1.5 flex-shrink-0" />
                         <span className="truncate">{feature}</span>
                       </div>
                     ))}
