@@ -52,7 +52,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BrainCircuit className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold text-gray-900">TechAI Solutions</span>
+              <span className="text-xl font-bold text-gray-900">BeyondAI Cloud</span>
             </div>
             <nav className="hidden md:flex items-center gap-6">
               <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
@@ -70,6 +70,10 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="container px-4 pt-32 pb-20 mx-auto text-center relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000')] 
+          bg-cover bg-center opacity-10"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,13 +82,13 @@ const Index = () => {
           className="max-w-3xl mx-auto relative"
         >
           <span className="px-3 py-1 text-sm font-medium text-primary-dark bg-primary/10 rounded-full">
-            Innovation Through Technology
+            Beyond Imagination, Beyond Limits
           </span>
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Transform Your Business with Advanced Technology Solutions
+            Elevate Your Business with Cloud-Powered AI Solutions
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Leverage cutting-edge AI and technology solutions to drive your business forward. Expert services tailored to your unique needs.
+            Where innovation meets implementation. Transforming possibilities into reality with cutting-edge AI technology.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
@@ -100,6 +104,10 @@ const Index = () => {
 
       {/* Services Grid */}
       <section id="services" className="container px-4 py-20 mx-auto relative">
+        <div 
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000')] 
+          bg-cover bg-fixed bg-center opacity-5"
+        />
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none" />
         <motion.div
           initial={{ opacity: 0 }}
@@ -155,6 +163,10 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="relative isolate overflow-hidden bg-gradient-to-br from-primary to-primary-dark rounded-3xl px-6 py-24 text-center shadow-2xl sm:px-16"
         >
+          <div 
+            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2000')] 
+            bg-cover bg-center opacity-10"
+          />
           <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to Transform Your Business?
           </h2>
@@ -180,10 +192,10 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 text-white mb-4">
                 <BrainCircuit className="w-8 h-8" />
-                <span className="text-xl font-bold">TechAI Solutions</span>
+                <span className="text-xl font-bold">BeyondAI Cloud</span>
               </div>
               <p className="text-gray-400 max-w-sm">
-                Transforming businesses through cutting-edge AI and technology solutions.
+                Breaking barriers in AI innovation. Transforming businesses through cutting-edge cloud solutions.
               </p>
             </div>
             <div>
@@ -191,7 +203,7 @@ const Index = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-gray-400">
                   <Mail className="w-5 h-5" />
-                  <span>contact@techai.com</span>
+                  <span>contact@beyondaicloud.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
                   <Phone className="w-5 h-5" />
@@ -212,7 +224,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} TechAI Solutions. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} BeyondAI Cloud. All rights reserved.</p>
           </div>
         </div>
       </footer>
