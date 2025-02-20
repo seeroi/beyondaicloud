@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Cog, Server, Calendar, Mail, Phone, MapPin, Users } from "lucide-react";
@@ -44,17 +45,17 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200">
+    <div className="min-h-screen bg-secondary">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+      <header className="fixed top-0 left-0 right-0 bg-secondary/80 backdrop-blur-md z-50 border-b border-gray-700">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BrainCircuit className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold text-gray-900">Beyond AI Cloud</span>
+              <span className="text-xl font-bold text-white">Beyond AI Cloud</span>
             </div>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
+              <a href="#services" className="text-gray-300 hover:text-primary transition-colors">Services</a>
               <Button
                 onClick={handleConsultation}
                 variant="outline"
@@ -71,22 +72,22 @@ const Index = () => {
       <section className="container px-4 pt-32 pb-20 mx-auto text-center relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000')] 
-          bg-cover bg-center opacity-5"
+          bg-cover bg-center opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto relative"
         >
-          <span className="px-3 py-1 text-sm font-medium text-primary-dark bg-primary/10 rounded-full">
+          <span className="px-3 py-1 text-sm font-medium text-primary bg-primary/20 rounded-full">
             Beyond Imagination, Beyond Limits
           </span>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Elevate Your Business with Cloud-Powered AI Solutions
           </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-gray-300">
             Where innovation meets implementation. Transforming possibilities into reality with cutting-edge AI technology.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -105,19 +106,19 @@ const Index = () => {
       <section id="services" className="container px-4 py-20 mx-auto relative">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000')] 
-          bg-cover bg-fixed bg-center opacity-5"
+          bg-cover bg-fixed bg-center opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mb-16 relative"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Our Services
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-300">
             Comprehensive technology solutions for modern businesses
           </p>
         </motion.div>
@@ -131,17 +132,17 @@ const Index = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative p-8 rounded-2xl transition-all duration-300 ${
                 isHovered === index
-                  ? "bg-primary/5 shadow-lg scale-105"
-                  : "bg-white/60 hover:bg-primary/5 hover:shadow-md"
+                  ? "bg-primary/20 shadow-lg scale-105"
+                  : "bg-secondary/80 hover:bg-primary/10 hover:shadow-md"
               }`}
               onMouseEnter={() => setIsHovered(index)}
               onMouseLeave={() => setIsHovered(null)}
             >
               <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600">{service.description}</p>
+              <p className="text-gray-300">{service.description}</p>
               <ArrowRight
                 className={`absolute bottom-6 right-6 w-5 h-5 transition-all duration-300 ${
                   isHovered === index
@@ -160,22 +161,22 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative isolate overflow-hidden bg-gradient-to-br from-primary to-primary-dark rounded-3xl px-6 py-24 text-center shadow-2xl sm:px-16"
+          className="relative isolate overflow-hidden bg-gradient-to-br from-primary/30 to-primary-dark/50 rounded-3xl px-6 py-24 text-center shadow-2xl sm:px-16"
         >
           <div 
             className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2000')] 
-            bg-cover bg-center opacity-10"
+            bg-cover bg-center opacity-30"
           />
           <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to Transform Your Business?
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-200">
             Schedule a free consultation and discover how our technology solutions can help you achieve your goals.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
               onClick={handleConsultation}
-              className="group bg-white text-primary hover:bg-gray-100 transition-all duration-300"
+              className="group bg-primary text-white hover:bg-primary-dark transition-all duration-300"
             >
               Get Started
               <ArrowRight className="ml-2 inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -185,12 +186,12 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary py-12">
+      <footer className="bg-secondary-dark py-12 mt-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center gap-2 text-white mb-4">
-                <BrainCircuit className="w-8 h-8" />
+                <BrainCircuit className="w-8 h-8 text-primary" />
                 <span className="text-xl font-bold">Beyond AI Cloud</span>
               </div>
               <p className="text-gray-400 max-w-sm">
