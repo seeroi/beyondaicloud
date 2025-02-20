@@ -202,11 +202,14 @@ const Index = () => {
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-600 mb-2 line-clamp-2">{service.description}</p>
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  <div className="flex flex-wrap gap-1.5">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-xs text-gray-600 whitespace-nowrap overflow-hidden">
+                      <div 
+                        key={idx} 
+                        className="inline-flex items-center px-2 py-0.5 rounded-full bg-gray-50 border border-gray-100 text-xs text-gray-600"
+                      >
                         <div className="w-1 h-1 rounded-full bg-primary mr-1.5 flex-shrink-0" />
-                        <span className="truncate">{feature}</span>
+                        {feature}
                       </div>
                     ))}
                   </div>
