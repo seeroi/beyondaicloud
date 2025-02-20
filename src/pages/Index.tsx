@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BrainCircuit, BarChart3, Database, Cloud, Calendar, Mail, Phone, MapPin, Users, Bot, MessageSquareCode, GitBranch, FileCode2, Zap, Workflow, Cog, Server, Terminal, Briefcase, Kanban, ListTree, ChartBar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -110,8 +109,6 @@ const Index = () => {
             </div>
             <div className="hidden md:flex items-center gap-6">
               <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
-              <Link to="/blog" className="text-gray-600 hover:text-primary transition-colors">Blog</Link>
-              <Link to="/faq" className="text-gray-600 hover:text-primary transition-colors">FAQ</Link>
               <Button
                 onClick={handleConsultation}
                 variant="outline"
