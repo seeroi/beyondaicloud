@@ -156,7 +156,7 @@ const Index = () => {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="container px-4 py-20 mx-auto relative">
+      <section id="services" className="container px-4 py-16 mx-auto relative">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000')] 
           bg-cover bg-fixed bg-center opacity-10 saturate-150"
@@ -166,48 +166,52 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-16 relative"
+          className="text-center mb-8 relative"
         >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Our Services
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-3 text-lg text-gray-600">
             Comprehensive AI and technology solutions for modern enterprises
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative p-8 rounded-2xl transition-all duration-300 ${
+              className={`relative p-4 rounded-xl transition-all duration-300 ${
                 isHovered === index
-                  ? "bg-white shadow-xl scale-105 border border-primary/20"
-                  : "bg-white/80 hover:bg-white hover:shadow-lg border border-gray-100"
+                  ? "bg-white shadow-lg scale-102 border border-primary/20"
+                  : "bg-white/80 hover:bg-white hover:shadow-md border border-gray-100"
               }`}
               onMouseEnter={() => setIsHovered(index)}
               onMouseLeave={() => setIsHovered(null)}
             >
-              <div className={`text-primary mb-6 transform transition-all duration-300 ${
-                isHovered === index ? "scale-110" : ""
-              }`}>
-                {service.icon}
+              <div className="flex items-start space-x-4">
+                <div className={`text-primary transform transition-all duration-300 ${
+                  isHovered === index ? "scale-110" : ""
+                }`}>
+                  {service.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">{service.description}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-gray-600">
+                        <div className="w-1 h-1 rounded-full bg-primary mr-2 flex-shrink-0" />
+                        <span className="truncate">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <ul className="space-y-3">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
