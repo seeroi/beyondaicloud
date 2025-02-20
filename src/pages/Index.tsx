@@ -98,16 +98,16 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <nav className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <BrainCircuit className="w-8 h-8 text-primary" />
+              <BrainCircuit className="w-8 h-8 text-primary" aria-hidden="true" />
               <span className="text-xl font-bold text-gray-900">Beyond AI Cloud</span>
             </div>
-            <nav className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-6">
               <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
               <Button
                 onClick={handleConsultation}
@@ -116,8 +116,8 @@ const Index = () => {
               >
                 Book Consultation
               </Button>
-            </nav>
-          </div>
+            </div>
+          </nav>
         </div>
       </header>
 
@@ -126,30 +126,29 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000')] 
           bg-cover bg-center opacity-5"
+          role="img"
+          aria-label="Abstract technology background"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" aria-hidden="true" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto relative"
         >
-          <span className="px-3 py-1 text-sm font-medium text-primary-dark bg-primary/10 rounded-full">
-            Beyond Imagination, Beyond Limits
-          </span>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Elevate Your Business with Cloud-Powered AI Solutions
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            Transform Your Business with Enterprise AI & Cloud Solutions
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Where innovation meets implementation. Transforming possibilities into reality with cutting-edge AI technology.
+            Leverage cutting-edge artificial intelligence and cloud technology to accelerate growth, optimize operations, and drive innovation in your enterprise.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
               onClick={handleConsultation}
               className="group relative px-6 py-6 text-lg bg-primary hover:bg-primary-dark transition-all duration-300"
             >
-              Schedule a Free Consultation
-              <Calendar className="ml-2 inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Schedule a Free AI Consultation
+              <Calendar className="ml-2 inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Button>
           </div>
         </motion.div>
@@ -293,7 +292,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
 };
 
