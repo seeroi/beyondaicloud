@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Calendar, Mail, Phone, MapPin, Users, Bot, MessageSquareCode, GitBranch, FileCode2, Zap, Workflow, Cog, Server, Terminal, Briefcase, Kanban, ListTree, ChartBar } from "lucide-react";
+import { ArrowRight, BrainCircuit, BarChart3, Database, Cloud, Calendar, Mail, Phone, MapPin, Users, Bot, MessageSquareCode, GitBranch, FileCode2, Zap, Workflow, Cog, Server, Terminal, Briefcase, Kanban, ListTree, ChartBar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -14,14 +14,7 @@ const services = [
       "Custom AI Agents",
       "RAG (Retrieval Augmented Generation)",
       "Autonomous AI Systems",
-      "Knowledge Base Integration"
-    ],
-  },
-  {
-    icon: <Bot className="w-10 h-10" />,
-    title: "Generative AI",
-    description: "Transform content creation and problem-solving with AI",
-    features: [
+      "Knowledge Base Integration",
       "Text & Code Generation",
       "Image & Video Synthesis",
       "Voice & Speech Processing",
@@ -207,7 +200,7 @@ const Index = () => {
                 {service.title}
               </h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-gray-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
@@ -215,14 +208,6 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <div className={`absolute bottom-6 right-6 flex items-center text-sm font-medium ${
-                isHovered === index ? "text-primary" : "text-gray-500"
-              }`}>
-                Learn More
-                <ArrowRight className={`ml-1 w-4 h-4 transition-transform duration-300 ${
-                  isHovered === index ? "translate-x-1" : ""
-                }`} />
-              </div>
             </motion.div>
           ))}
         </div>
