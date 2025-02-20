@@ -1,24 +1,23 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Code, Server, Calendar, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Rocket, BrainCircuit, BarChart3, Database, Cloud, Cog, Server, Calendar, Mail, Phone, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: <BrainCircuit className="w-8 h-8" />,
-    title: "AI & AI Agents",
-    description: "Cutting-edge artificial intelligence solutions tailored to your needs",
+    title: "AI Automations",
+    description: "Streamline your operations with intelligent automation solutions",
   },
   {
     icon: <Rocket className="w-8 h-8" />,
     title: "Generative AI",
-    description: "Transform your business with state-of-the-art generative AI technology",
+    description: "Harness the power of state-of-the-art generative AI models",
   },
   {
     icon: <BarChart3 className="w-8 h-8" />,
-    title: "Analytics",
-    description: "Data-driven insights to power your decision making",
+    title: "Analytics & Insights",
+    description: "Data-driven insights to power strategic decision making",
   },
   {
     icon: <Database className="w-8 h-8" />,
@@ -26,14 +25,14 @@ const services = [
     description: "Robust data infrastructure and pipeline solutions",
   },
   {
-    icon: <Server className="w-8 h-8" />,
-    title: "DevOps & AWS",
-    description: "Seamless cloud infrastructure and deployment automation",
+    icon: <Cloud className="w-8 h-8" />,
+    title: "Cloud Solutions",
+    description: "Multi-cloud infrastructure and deployment strategies",
   },
   {
-    icon: <Code className="w-8 h-8" />,
-    title: "Full Stack Development",
-    description: "End-to-end web and application development",
+    icon: <Users className="w-8 h-8" />,
+    title: "Product Management",
+    description: "Strategic product planning and development lifecycle",
   },
 ];
 
@@ -45,14 +44,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BrainCircuit className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold text-gray-900">BeyondAI Cloud</span>
+              <span className="text-xl font-bold text-gray-900">Beyond AI Cloud</span>
             </div>
             <nav className="hidden md:flex items-center gap-6">
               <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
@@ -72,9 +71,9 @@ const Index = () => {
       <section className="container px-4 pt-32 pb-20 mx-auto text-center relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000')] 
-          bg-cover bg-center opacity-10"
+          bg-cover bg-center opacity-5"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -132,8 +131,8 @@ const Index = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative p-8 rounded-2xl transition-all duration-300 ${
                 isHovered === index
-                  ? "bg-white shadow-lg scale-105"
-                  : "bg-white/80 hover:bg-white hover:shadow-md"
+                  ? "bg-primary/5 shadow-lg scale-105"
+                  : "bg-white/60 hover:bg-primary/5 hover:shadow-md"
               }`}
               onMouseEnter={() => setIsHovered(index)}
               onMouseLeave={() => setIsHovered(null)}
@@ -186,13 +185,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary py-12 mt-20">
+      <footer className="bg-secondary py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center gap-2 text-white mb-4">
                 <BrainCircuit className="w-8 h-8" />
-                <span className="text-xl font-bold">BeyondAI Cloud</span>
+                <span className="text-xl font-bold">Beyond AI Cloud</span>
               </div>
               <p className="text-gray-400 max-w-sm">
                 Breaking barriers in AI innovation. Transforming businesses through cutting-edge cloud solutions.
@@ -224,7 +223,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} BeyondAI Cloud. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Beyond AI Cloud. All rights reserved.</p>
           </div>
         </div>
       </footer>
